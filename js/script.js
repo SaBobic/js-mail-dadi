@@ -1,16 +1,19 @@
-// Dichiaro la lista delle email
-const emails = ["a@email.com", "b@email.com", "c@email.com", "d@email.com", "e@email.com", "f@email.com", "g@email.com"];
+// Dichiaro i generatori di numeri (casuali da 1 a 6) di utente e computer
+const userNumber = Math.floor(Math.random() * 6 + 1);
+const computerNumber = Math.floor(Math.random() * 6 + 1);
+console.log("Il tuo numero è " + userNumber);
+console.log("Il numero del computer è " + computerNumber);
 
-// Dichiaro l'input dell'utente
-const emailInput = prompt("Inserisci la tua email per accedere", "a@email.com");
+// Dichiaro il messaggio di vittoria, sconfitta o pareggio dell'utente
+let resultMessage = "Complimenti, hai vinto!";
 
-// Dichiaro il messaggio di benvenuto
-let welcomeMessage = "Benvenuto";
-
-// Confronto l'input dell'utente con l'array
-if (emails.includes(emailInput)){
-    console.log(welcomeMessage);
+// Confronto i numeri, per vedere chi ha vinto
+if (userNumber > computerNumber){
+    console.log(resultMessage);
+} else if (userNumber < computerNumber){
+    resultMessage = "Peccato, hai perso!";
+    console.log(resultMessage);
 } else {
-    welcomeMessage = "Spiacenti, la tua email non è presente nei nostri sistemi.";
-    console.log(welcomeMessage);
+    resultMessage = "Pareggio!";
+    console.log(resultMessage);
 }
