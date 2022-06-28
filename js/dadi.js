@@ -4,16 +4,14 @@ const computerNumber = Math.floor(Math.random() * 6 + 1);
 console.log("Il tuo numero è " + userNumber);
 console.log("Il numero del computer è " + computerNumber);
 
-// Dichiaro il messaggio di vittoria, sconfitta o pareggio dell'utente
+// Dichiaro il messaggio di vittoria
 let resultMessage = "Complimenti, hai vinto!";
 
-// Confronto i numeri, per vedere chi ha vinto
-if (userNumber > computerNumber){
-    console.log(resultMessage);
-} else if (userNumber < computerNumber){
+// Confronto i numeri, per modificare resultMessage se l'utente ha perso o pareggiato 
+if (userNumber < computerNumber){
     resultMessage = "Peccato, hai perso!";
-    console.log(resultMessage);
-} else {
+} else if (userNumber === computerNumber){
     resultMessage = "Pareggio!";
-    console.log(resultMessage);
 }
+
+console.log(resultMessage);
